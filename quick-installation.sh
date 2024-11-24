@@ -41,13 +41,6 @@ echo -e "\033[0;32mSelect your Node.js version: \033[0m"
 read NODEJS_USER
 nvm install $NODEJS_USER
 
-if [ $? -eq 0 ]; then
-    clear
-    echo -e "\033[0;32mNode.js version $NODEJS_USER installed successfully!\033[0m"
-else
-    echo -e "\033[0;31mFailed to install Node.js version $NODEJS_USER. Please check the logs above.\033[0m"
-fi
-
 # Install PHP
 echo -e "\033[0;32mInstall php and php extension...\033[0m"
 sudo apt update -y && sudo apt upgrade -y
