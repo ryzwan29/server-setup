@@ -1,5 +1,18 @@
 #!bin/bash
 
+echo -e "\033[1;32m
+██████╗ ██╗   ██  ███████╗  ███████╗  ███████╗  
+██╔══██╗ ██╗ ██║  ██║   ██║ ██║   ██║ ██║   ██║
+██████╔╝  ████║   ██║   ██║ ██║   ██║ ██║   ██║
+██╔══██╗   ██╔╝   ██║   ██║ ██║   ██║ ██║   ██║
+██║  ██║   ██║    ███████║  ███████║  ███████║
+╚═╝  ╚═╝   ╚═╝    ╚══════╝  ╚══════╝  ╚══════╝
+\033[0m"
+echo -e "\033[1;34m==================================================\033[1;34m"
+echo -e "\033[1;34m@Ryddd | Testnet, Node Runer, Developer, Retrodrop\033[1;34m"
+
+sleep 4
+
 # Update & Install dependencies
 echo -e "\033[0;32mUpdating and Installing dependencies...\033[0m"
 sudo apt update && sudo apt upgrade -y
