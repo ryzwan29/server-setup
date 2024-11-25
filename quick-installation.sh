@@ -37,8 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm list-remote
-echo -e "\033[0;32mSelect your Node.js version: \033[0m" 
-read NODEJS_USER
+read -p "\033[0;32mSelect your Node.js version: \033[0m" NODEJS_USER
 nvm install $NODEJS_USER
 
 # Install PHP
@@ -53,3 +52,10 @@ clear
 echo -e "\033[0;32mInstall MariaDB Database...\033[0m"
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install mariadb-server -y
+clear
+
+# Give sudo and docker permission to user
+echo -e "\033[0;32mGive sudo and docker permission to user...\033[0m"
+sudo usermod -aG sudo $USER
+sudo groupadd docker
+sudo usermod -aG docker $USER
