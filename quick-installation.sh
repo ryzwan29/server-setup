@@ -52,7 +52,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 nvm list-remote
-read -p "\033[0;32mSelect your Node.js version: \033[0m" NODEJS_USER
+read -p "Select your Node.js version: " NODEJS_USER
 nvm install $NODEJS_USER
 
 # Install PHP
