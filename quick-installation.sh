@@ -55,19 +55,22 @@ nvm list-remote
 read -p "Select your Node.js version: " NODEJS_USER
 nvm install $NODEJS_USER
 
-# Install PHP
-echo -e "\033[0;32mInstall php and php extension...\033[0m"
-sudo apt update -y && sudo apt upgrade -y
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update -y
-sudo apt-get install php8.3 php8.3-mysql php8.3-imap php8.3-ldap php8.3-xml php8.3-curl php8.3-mbstring php8.3-zip -y
-clear
+# Install Nodejs
+echo -e "\033[0;32mInstall Yarn...\033[0m"
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo tee /etc/apt/trusted.gpg.d/yarn.asc
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn -y
 
-# Install mariadb
-echo -e "\033[0;32mInstall MariaDB Database...\033[0m"
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install mariadb-server -y
-clear
+# Install Rust
+echo -e "\033[0;32mInstall Rust...\033[0m"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+# Install Foundry
+echo -e "\033[0;32mInstall Foundry...\033[0m"
+curl -L https://foundry.paradigm.xyz | bash
+source "$HOME/.bashrc"
+foundryup
 
 # Give sudo and docker permission to user
 echo -e "\033[0;32mGive sudo and docker permission to user...\033[0m"
